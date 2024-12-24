@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
 body{
     font-family: Poppins;
     background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
@@ -59,3 +60,39 @@ body{
   -webkit-text-stroke: 0px black; /* Initially no border around stars */
   
 }
+.testimonial-card .testimonial-card-tt {
+    font-family: "Afacad Flux";
+    font-size: 25px;
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    bottom: 105%; /* Always position above the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.testimonial-card .testimonial-card-tt::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Arrow pointing down */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.testimonial-card:hover .testimonial-card-tt {
+    visibility: visible;
+    opacity: 1;
+}
+
